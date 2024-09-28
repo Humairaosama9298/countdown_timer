@@ -101,63 +101,65 @@ export default function Countdown() {
     setDuration(Number(e.target.value) || ""); // Update the duration state
   };
 
-  // JSX return statement rendering the Countdown UI
-  return (
-    // Container div for centering the content
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900">
-      {/* Timer box container */}
-      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-md">
-        {/* Title of the countdown timer */}
-        <h1 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200 text-center">
-          Countdown Timer
-        </h1>
-        {/* Input and set button container */}
-        <div className="flex items-center mb-6">
-          <Input
-            type="number"
-            id="duration"
-            placeholder="Enter duration in seconds"
-            value={duration}
-            onChange={handleDurationChange}
-            className="flex-1 mr-4 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
-          />
-          <Button
-            onClick={handleSetDuration}
-            variant="outline"
-            className="text-gray-800 dark:text-gray-200"
-          >
-            Set
-          </Button>
-        </div>
-        {/* Display the formatted time left */}
-        <div className="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
-          {formatTime(timeLeft)}
-        </div>
-        {/* Buttons to start, pause, and reset the timer */}
-        <div className="flex justify-center gap-4">
-          <Button
-            onClick={handleStart}
-            variant="outline"
-            className="text-gray-800 dark:text-gray-200"
-          >
-            {isPaused ? "Resume" : "Start"}
-          </Button>
-          <Button
-            onClick={handlePause}
-            variant="outline"
-            className="text-gray-800 dark:text-gray-200"
-          >
-            Pause
-          </Button>
-          <Button
-            onClick={handleReset}
-            variant="outline"
-            className="text-gray-800 dark:text-gray-200"
-          >
-            Reset
-          </Button>
-        </div>
+// JSX return statement rendering the Countdown UI
+return (
+  // Container div for centering the content
+  <div className="flex flex-col items-center justify-center  h-screen bg-gradient-to-r from-indigo-200 from-10% via-sky-200 via-30% to-emerald-200 to-90%  dark:bg-gray-200 ">
+
+    {/* Timer box container */}
+    <div className="shadow-[0_35px_60px_-15px_rgba(0,0,0,0.4)] rounded-xl p-8 w-full max-w-md bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90%  dark:bg-gray-400">
+
+      {/* Title of the countdown timer */}
+      <h1 className="text-2xl font-bold mb-4 text-violet-950 dark:text-gray-100 text-center">
+        Countdown Timer
+      </h1>
+      {/* Input and set button container */}
+      <div className="flex items-center mb-6">
+        <Input
+          type="number"
+          id="duration"
+          placeholder="Enter duration in seconds"
+          value={duration}
+          onChange={handleDurationChange}
+          className="flex-1 rounded-xl mr-4 text-violet-950 bg-transparent shadow-inner shadow-gray-500/70 border-none hover:bg-emerald-100  dark:md:hover:bg-black-600  dark:text-gray-100 dark:bg-gray-300"
+        />
+        <Button
+          onClick={handleSetDuration}
+          variant="outline"
+          className="text-violet-950 rounded-xl bg-transparent shadow-inner shadow-gray-500/70 border-none hover:bg-emerald-100  dark:md:hover:bg-black-600  dark:text-gray-100 "
+        >
+          Set
+        </Button>
+      </div>
+      {/* Display the formatted time left */}
+      <div className="text-6xl font-bold text-violet-950 dark:text-gray-100 mb-8 text-center">
+        {formatTime(timeLeft)}
+      </div>
+      {/* Buttons to start, pause, and reset the timer */}
+      <div className="flex justify-center gap-4 ">
+        <Button
+          onClick={handleStart}
+          variant="outline"
+          className="text-violet-950 rounded-xl bg-transparent shadow-inner shadow-gray-400/70 border-none hover:bg-emerald-100  dark:md:hover:bg-black-600  dark:text-gray-100 "
+        >
+          {isPaused ? "Resume" : "Start"}
+        </Button>
+        <Button
+          onClick={handlePause}
+          variant="outline"
+          className="text-violet-950 rounded-xl bg-transparent shadow-inner shadow-gray-400/70 border-none hover:bg-emerald-100  dark:md:hover:bg-black-600  dark:text-gray-100 "
+        >
+          Pause
+        </Button>
+        <Button
+          onClick={handleReset}
+          variant="outline"
+          className="text-violet-950 rounded-xl bg-transparent shadow-inner shadow-gray-400/70 border-none dark:text-gray-100 hover:bg-emerald-100  dark:md:hover:bg-black-600 "
+        >
+          Reset
+        </Button>
       </div>
     </div>
-  );
+  </div>
+);
 }
